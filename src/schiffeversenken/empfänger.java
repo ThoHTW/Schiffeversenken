@@ -8,7 +8,7 @@ public interface empfänger {
      * @param random
      * @throws IOException
      */
-    void receiveDice(int random) throws IOException;
+    void receiveDice(int random) throws IOException, StatusException;
 
     /**
      * allowed in status SINK_R, goes to CONFIRMS
@@ -16,12 +16,12 @@ public interface empfänger {
      * @param column
      * @throws IOException
      */
-    void receiveCoordinate(int line, int column) throws IOException;
+    void receiveCoordinate(int line, int column) throws IOException, StatusException;
 
     /**
      * allowed in status CONFIRM_R, goes to SINK_S or END
      * @param hit
      * @throws IOException
      */
-    void recieveConfirm(int hit) throws IOException;
+    void recieveConfirm(int hit) throws IOException, StatusException;
 }
